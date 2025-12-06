@@ -1,22 +1,30 @@
-# CIFAR-10 CNN Classifier
+# CIFAR-10 Image Classification
 
-CNN for classifying CIFAR-10 images into 10 categories.
+CNN and transfer learning for CIFAR-10 image classification.
 
-## Results
-- **Test Accuracy:** 67%
-- **Architecture:** 2 convolutional blocks (3→32→64 channels)
-- **Training:** 20 epochs with Adam optimizer
+## Projects
 
-## Classes
-airplane, car, bird, cat, deer, dog, frog, horse, ship, truck
+### 1. Custom CNN (`cifar10_cnn.ipynb`)
+- Built from scratch with 2 convolutional blocks
+- **Accuracy:** 67%
+- Architecture: 3→32→64 channels
+
+### 2. Transfer Learning (`cifar10_transfer_learning.ipynb`)
+- Pretrained ResNet18 with fine-tuning
+- **Accuracy:** 80%
+- Includes data augmentation experiments
+
+## Results Comparison
+| Approach | Accuracy |
+|----------|----------|
+| Custom CNN | 67% |
+| ResNet18 Transfer Learning | 80% |
 
 ## How to Run
 ```bash
 pip install -r requirements.txt
-jupyter notebook cifar10_cnn.ipynb
+jupyter notebook
 ```
 
-## Architecture
-- Conv2d(3→32) + ELU + MaxPool
-- Conv2d(32→64) + ELU + MaxPool  
-- Flatten + Linear(4096→10)
+## Classes
+airplane, car, bird, cat, deer, dog, frog, horse, ship, truck
